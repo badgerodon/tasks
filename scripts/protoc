@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euo pipefail
+
+_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+_protoc_version="3.17.3"
+_protoc_path="/tmp/badgerodon-tasks-protoc/protoc-$_protoc_version"
+_os="linux"
+if [ "$(uname -s)" == "Darwin" ]; then
+  _os="osx"
+fi
+
+mkdir -p "$_protoc_path"
+if [ ! -f "$_protoc_path/bin/protoc" ]; then
+  echo "downloading protoc"
+  curl -L \
+    -o protoc.zip \
+    "https://github.com/protocolbuffers/protobuf/releases/download/v$_protoc_version/protoc-$_protoc_version-$_os-x86_64.zip"
+  unzip -o -d "$_protoc_path" protoc.zip
+  rm protoc.zip
+fi
+
+exec "$_protoc_path/bin/protoc" \
+  --plugin="protoc-gen-go=$_dir/protoc-gen-go" \
+  --plugin="protoc-gen-ts=$_dir/protoc-gen-ts" \
+  --plugin="protoc-gen-twirp=$_dir/protoc-gen-twirp" \
+  --plugin="protoc-gen-twirp_ts=$_dir/protoc-gen-twirp_ts" \
+  "$@"
