@@ -6,9 +6,8 @@ cd "$_dir/../protos"
 
 exec ../scripts/protoc \
     --go_out=paths=source_relative:../pkg/pb \
-    --twirp_out=paths=source_relative:../pkg/pb \
-    --ts_out=../ui/src/pb \
-    --ts_opt=client_none \
-    --ts_opt=generate_dependencies \
-    --twirp_ts_out=../ui/src/pb \
+    --grpc-go_out=paths=source_relative:../pkg/pb \
+    --ts_proto_out=../ui/src/pb \
+    --ts_proto_opt=env=browser \
+    --ts_proto_opt=outputClientImpl=grpc-web \
     ./*.proto

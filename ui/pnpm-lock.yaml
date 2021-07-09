@@ -1,46 +1,56 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@improbable-eng/grpc-web': ^0.14.0
   '@protobuf-ts/plugin': ^2.0.0-alpha.27
   '@protobuf-ts/runtime': ^2.0.0-alpha.27
   '@protobuf-ts/runtime-rpc': ^2.0.0-alpha.27
   '@snowpack/plugin-react-refresh': ^2.5.0
   '@snowpack/plugin-typescript': ^1.2.1
+  '@types/google-protobuf': ^3.15.3
   '@types/mocha': ^8.2.2
   '@types/react': ^17.0.13
   '@types/react-dom': ^17.0.8
   '@types/snowpack-env': ^2.3.3
   autoprefixer: ^10.2.6
   axios: ^0.21.1
+  browser-headers: ^0.4.1
   google-protobuf: ^3.17.3
+  long: ^4.0.0
   postcss: ^8.3.5
+  protobufjs: ^6.11.2
   react: ^17.0.2
   react-dom: ^17.0.2
   snowpack: ^3.7.1
   tailwindcss: ^2.2.4
   ts-proto: ^1.82.0
-  twirp-ts: ^2.1.1
+  typescript: ^4.3.5
 
 dependencies:
+  '@improbable-eng/grpc-web': 0.14.0_google-protobuf@3.17.3
   '@protobuf-ts/plugin': 2.0.0-alpha.27
   '@protobuf-ts/runtime': 2.0.0-alpha.27
   '@protobuf-ts/runtime-rpc': 2.0.0-alpha.27
   '@snowpack/plugin-react-refresh': 2.5.0_react-dom@17.0.2+react@17.0.2
-  '@snowpack/plugin-typescript': 1.2.1
+  '@snowpack/plugin-typescript': 1.2.1_typescript@4.3.5
+  '@types/google-protobuf': 3.15.3
   '@types/mocha': 8.2.2
   '@types/react': 17.0.13
   '@types/react-dom': 17.0.8
   '@types/snowpack-env': 2.3.3
   autoprefixer: 10.2.6_postcss@8.3.5
   axios: 0.21.1
+  browser-headers: 0.4.1
   google-protobuf: 3.17.3
+  long: 4.0.0
   postcss: 8.3.5
+  protobufjs: 6.11.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   snowpack: 3.7.1
   tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
   ts-proto: 1.82.0
-  twirp-ts: 2.1.1_972db46b9b160695abe0cc31bc1367e4
+  typescript: 4.3.5
 
 packages:
 
@@ -280,6 +290,15 @@ packages:
       purgecss: 4.0.3
     dev: false
 
+  /@improbable-eng/grpc-web/0.14.0_google-protobuf@3.17.3:
+    resolution: {integrity: sha512-ag1PTMWpBZKGi6GrEcZ4lkU5Qag23Xjo10BmnK9qyx4TMmSVcWmQ3rECirfQzm2uogrM9n1M6xfOpFsJP62ivA==}
+    peerDependencies:
+      google-protobuf: ^3.14.0
+    dependencies:
+      browser-headers: 0.4.1
+      google-protobuf: 3.17.3
+    dev: false
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -442,18 +461,23 @@ packages:
       - supports-color
     dev: false
 
-  /@snowpack/plugin-typescript/1.2.1:
+  /@snowpack/plugin-typescript/1.2.1_typescript@4.3.5:
     resolution: {integrity: sha512-wU+JNaMVkqGsqTaUY7TnEMhGt/3URTgA9dpMCtZX6wn/ceA7Gwlmue/sOLynf0OTNLygHPvjiQECQYkEi3LTtg==}
     peerDependencies:
       typescript: '*'
     dependencies:
       execa: 5.1.1
       npm-run-path: 4.0.1
+      typescript: 4.3.5
     dev: false
 
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
+    dev: false
+
+  /@types/google-protobuf/3.15.3:
+    resolution: {integrity: sha512-MDpu7lit927cdLtBzTPUFjXGANFUnu5ThPqjygY8XmCyI/oDlIA0jAi4sffGOxYaLK2CCxAuU9wGxsgAQbA6FQ==}
     dev: false
 
   /@types/long/4.0.1:
@@ -464,8 +488,8 @@ packages:
     resolution: {integrity: sha512-Lwh0lzzqT5Pqh6z61P3c3P5nm6fzQK/MMHl9UKeneAeInVflBSz1O2EkX6gM6xfJd7FBXBY5purtLx7fUiZ7Hw==}
     dev: false
 
-  /@types/node/16.0.0:
-    resolution: {integrity: sha512-TmCW5HoZ2o2/z2EYi109jLqIaPIi9y/lc2LmDCWzuCi35bcaQ+OtUh6nwBiFK7SOu25FAU5+YKdqFZUwtqGSdg==}
+  /@types/node/16.3.0:
+    resolution: {integrity: sha512-OydMCocGMGqw/1BnWbhtK+AtwyWTOigtrQlRe57OQmTNcI3HKlVI5FGlh+c4mSqInMPLynFrTlYjfajPu9O/eQ==}
     dev: false
 
   /@types/object-hash/1.3.4:
@@ -695,6 +719,10 @@ packages:
       fill-range: 7.0.1
     dev: false
 
+  /browser-headers/0.4.1:
+    resolution: {integrity: sha512-CA9hsySZVo9371qEHjHZtYxV2cFtVj5Wj/ZHi8ooEsrtm4vOnl9Y9HmyYWk9q+05d7K3rdoAE0j3MVEFVvtQtg==}
+    dev: false
+
   /browserslist/4.16.6:
     resolution: {integrity: sha512-Wspk/PqO+4W9qp5iUTJsa1B/QrYn1keNCcEP5OvP7WBwT4KaDly0uONYmC6Xa3Z5IqnUgS0KcgLYu1l74x0ZXQ==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -855,11 +883,6 @@ packages:
       delayed-stream: 1.0.0
     dev: false
 
-  /commander/4.1.1:
-    resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
-    engines: {node: '>= 6'}
-    dev: false
-
   /commander/6.2.1:
     resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
     engines: {node: '>= 6'}
@@ -988,14 +1011,6 @@ packages:
 
   /dlv/1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
-    dev: false
-
-  /dot-object/2.1.4:
-    resolution: {integrity: sha512-7FXnyyCLFawNYJ+NhkqyP9Wd2yzuo+7n9pGiYpkmXCTYa8Ci2U0eUNDVg5OuO5Pm6aFXI2SWN8/N/w7SJWu1WA==}
-    hasBin: true
-    dependencies:
-      commander: 4.1.1
-      glob: 7.1.7
     dev: false
 
   /ecc-jsbn/0.1.2:
@@ -1977,10 +1992,6 @@ packages:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
     dev: false
 
-  /path-to-regexp/6.2.0:
-    resolution: {integrity: sha512-f66KywYG6+43afgE/8j/GoiNyygk/bnoCbps++3ErRKsIYkGGupyv07R2Ok5m9i67Iqc+T2g1eAUGUPzWhYTyg==}
-    dev: false
-
   /path-type/4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -2100,7 +2111,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.1
-      '@types/node': 16.0.0
+      '@types/node': 16.3.0
       long: 4.0.0
     dev: false
 
@@ -2567,23 +2578,14 @@ packages:
     resolution: {integrity: sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=}
     dev: false
 
-  /twirp-ts/2.1.1_972db46b9b160695abe0cc31bc1367e4:
-    resolution: {integrity: sha512-+H7kmCd5ZY74folE8o4ebNUd8IxaO/Q4+TCsYTTyKCaFu/zYqUhmUcwbCvntvUnqxfcIYdK4aDGg8Qqs70nyaw==}
-    hasBin: true
-    peerDependencies:
-      '@protobuf-ts/plugin': ^2.0.0-alpha.27
-      ts-proto: ^1.81.3
-    dependencies:
-      '@protobuf-ts/plugin': 2.0.0-alpha.27
-      '@protobuf-ts/plugin-framework': 2.0.0-alpha.27
-      dot-object: 2.1.4
-      path-to-regexp: 6.2.0
-      ts-poet: 4.5.0
-      ts-proto: 1.82.0
-    dev: false
-
   /typescript/3.9.10:
     resolution: {integrity: sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: false
+
+  /typescript/4.3.5:
+    resolution: {integrity: sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: false

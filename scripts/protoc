@@ -21,7 +21,6 @@ fi
 
 exec "$_protoc_path/bin/protoc" \
   --plugin="protoc-gen-go=$_dir/protoc-gen-go" \
-  --plugin="protoc-gen-ts=$_dir/protoc-gen-ts" \
-  --plugin="protoc-gen-twirp=$_dir/protoc-gen-twirp" \
-  --plugin="protoc-gen-twirp_ts=$_dir/protoc-gen-twirp_ts" \
+  --plugin="protoc-gen-ts_proto=$_dir/protoc-gen-ts_proto" \
+  --plugin="protoc-gen-grpc-go=$_dir/protoc-gen-grpc-go" \
   "$@"

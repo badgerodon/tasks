@@ -38,11 +38,11 @@ message Task {
     // LeasedAt is when the attempt was leased by a worker.
     google.protobuf.Timestamp leased_at = 2;
     // CompletedAt is when the attempt was completed succesfully.
-    google.protobuf.Timestamp completed_at = 3;
+    optional google.protobuf.Timestamp completed_at = 3;
     // FailedAt is when the attempt was failed.
-    google.protobuf.Timestamp failed_at = 4;
+    optional google.protobuf.Timestamp failed_at = 4;
     // FailedMessage is the reason for the failure.
-    string failed_reason = 5;
+    optional string failed_reason = 5;
   }
 
   enum InitiatorType {
@@ -79,15 +79,15 @@ message Task {
   // CreatedAt indicates when the task was created.
   google.protobuf.Timestamp created_at = 8;
   // ScheduledAt indicates when the task is scheduled to be run.
-  google.protobuf.Timestamp scheduled_at = 9;
+  optional google.protobuf.Timestamp scheduled_at = 9;
   // Deadline indicates when the task must be completed by (including retries)
   // before its considered failed.
-  google.protobuf.Timestamp deadline = 10;
+  optional google.protobuf.Timestamp deadline = 10;
   // Timeout is the maximum amount of time a single attempt can run.
-  google.protobuf.Timestamp timeout = 11;
+  optional google.protobuf.Duration timeout = 11;
   // MaxAttempts is the maximum number of attempts that will be made before a
   // task is considered failed
-  int32 max_attempts = 12;
+  optional int32 max_attempts = 12;
 
   // Attempts are all the attempts that have been made. (output-only)
   repeated Attempt attempts = 13;
@@ -129,6 +129,7 @@ message RenewTaskLeaseRequest {
   google.protobuf.Duration duration = 2;
 }
 message SubmitTaskRequest { Task task = 1; }
+message SubmitTaskResponse { Task task = 1; }
 
 service Tasks {
   // viewing
@@ -140,7 +141,7 @@ service Tasks {
   rpc CompleteTask(CompleteTaskRequest) returns (google.protobuf.Empty);
   rpc LeaseTask(LeaseTaskRequest) returns (LeaseTaskResponse);
   rpc RenewTaskLease(RenewTaskLeaseRequest) returns (google.protobuf.Empty);
-  rpc SubmitTask(SubmitTaskRequest) returns (google.protobuf.Empty);
+  rpc SubmitTask(SubmitTaskRequest) returns (SubmitTaskResponse);
 
   // logs
   rpc AppendTaskLogs(AppendTaskLogsRequest) returns (google.protobuf.Empty);
